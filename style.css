@@ -1,0 +1,365 @@
+body{
+	margin: 0;
+	overflow: hidden;	
+	background: black;
+	font-family:sans-serif;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+a:hover{
+	color: white;
+}
+@keyframes mainload{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+#blankscreen{
+	height: 100vh;
+	width: 100vw;
+	background: black;
+	animation-name: mainload;
+	animation-fill-mode: forwards;
+	animation-duration: 3s;
+}
+#loader{
+	background: #fff;
+	height: 100vh;
+	width: 100%;
+	display:none;
+}
+#loadcenter{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#loadText{
+	font-family: 'Roboto' , sans-serif;
+	font-weight: 600;
+    font-stretch: normal;
+    font-size: 50vh;
+    line-height: 1;
+	letter-spacing: -25px;
+	transition: opacity 0.5s linear;
+}
+#before_bar{
+	height: 1px;
+	width: 15vw;
+	background-color: rgb(128,128,128);
+	position: absolute;
+	top: 90%;
+	left: 5%;
+}
+#after_bar{
+	height: 2px;
+	width: 15vw;
+	background-color: black;
+	animation-name: loadbar;
+	animation-delay: 0.5s;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-fill-mode; forwards;
+}
+@keyframes loadbar{
+	from{
+		width: 0%;
+	}
+	to{
+		width: 100%;
+	}
+}
+#loading{
+	position: absolute;
+	top: 88%;
+	left: 90%;
+	width: 5vw;
+	height: 5vh;
+	overflow: hidden;
+}
+#loading span{
+	position: absolute;
+	font-family: 'Roboto' , sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 1px;
+	animation-name: rotateload;
+	animation-delay: 1s;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+@keyframes rotateload{
+	0%{
+		top: 0%;
+	}
+	100%{
+		top: -100%;
+	}
+}
+#crossdiv1{
+	display: none;
+	width: 70px;
+	height: 300px;
+	background: black;
+	transform: matrix(1,1,-1,1,0,100);
+	transition: scale 2s ease;
+}
+#crossdiv2{
+	display: none;
+	width: 70px;
+	height: 300px;
+	background: black;
+	transform: matrix(1,-1,1,1,0,-200);
+	transition: scale 2s ease;
+}	
+.cscale1{
+	animation-name: scalecross1;
+	animation-delay: 0.5s;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+@keyframes scalecross1{
+	from{
+		transform: matrix(1,1,-1,1,0,100) scale(1);
+	}
+	to{
+		transform: matrix(1,1,-1,1,0,100) scale(100);
+	}
+}
+.cscale2{
+	animation-name: scalecross2;
+	animation-delay: 0.5s;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+@keyframes scalecross2{
+	from{
+		transform: matrix(1,-1,1,1,0,-200) scale(1);
+	}
+	to{
+		transform: matrix(1,-1,1,1,0,-200) scale(100);
+	}
+}
+.show{
+	display: block !important;
+	animation-name: viewpage;
+	animation-fill-mode: forwards;
+	animation-duration: 1.5s;
+}
+@keyframes viewpage{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+#main{
+	display: none;
+}
+#headvideo{
+	visibility: visibile;
+}
+.Header-logo{
+	top: 60px;
+    left: 60px;
+    font: 600 20px/1 century gothic;
+    letter-spacing: -1px;
+}
+.Header-logo, .Header-menu{
+    position: absolute;
+    z-index: 2;
+}
+.Header-label {
+    position: absolute;
+    top: 62px;
+    left: 260px;
+    font: 400 14px/1.5 century gothic;
+    color: rgba(255,255,255,.55);
+}
+#cross{
+	position: absolute;
+	top: 15%;
+	left: 45%;
+}
+#cross1{
+	width: 70px;
+	height: 300px;
+	background: white;
+	transform: matrix(1,1,-1,1,0,100) scale(1.1);
+	transition: scale 2s ease;
+}
+#cross2{
+	width: 70px;
+	height: 300px;
+	background: white;
+	transform: matrix(1,-1,1,1,0,-200) scale(1.1);
+	transition: scale 2s ease;
+}
+.Header-menu {
+    top: 48px;
+    right: 40px;
+    padding: 20px;
+    width: 60px;
+    cursor: pointer;
+}
+#bar1{
+	height: 2px;
+	width: 20px;
+	margin: 5px;
+	background-color: white;
+}
+#bar2{
+	height: 1.5px;
+	width: 20px;
+	margin: 5px;
+	background-color: white;
+}
+.footersocial{
+	display: block;
+    position: absolute;
+    bottom: 57px;
+    left: 60px;
+	overflow: hidden;
+	height: 22px;
+	width: 200px;
+}
+.social span{
+	transition: transform .45s cubic-bezier(.19,1,.22,1);
+	font: 400 15px/1 century gothic;
+	padding: 5px;
+}
+.link1{
+	position:absolute;
+	-webkit-transform: translate3d(0,0%,0);
+    transform: translate3d(0,0%,0);
+}
+.link2{
+	position:absolute;
+	-webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+.social:hover .link1 {
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+}
+.social:hover .link2 {
+	position:absolute;
+    -webkit-transform: translate3d(0,0%,0);
+    transform: translate3d(0,0%,0);
+}
+.social2{
+	position: relative;
+	left: 14%;
+}
+.social3{
+	position: relative;
+	left: 32%;
+}
+.Footer-contact {
+    display: block;
+    position: absolute;
+    bottom: 59px;
+    right: 60px;
+	height: 22px;
+	width: 100px;
+	overflow: hidden;
+    font: 400 14px/1.15 century gothic;
+}
+#location{
+	position: absolute;
+	top: 230px;
+	left: 150px;
+	visibility: hidden;
+}
+#location a>span{
+	display: block;
+	font: bold 15px/1.5 sans-serif;
+	padding: 3px;
+	letter-spacing: 0.5px;
+}
+#contact-number{
+	position: relative;
+	top: 50px;
+	overflow: hidden;
+	height: 22px;
+	width: 200px;
+}
+#visit{
+	position: relative;
+	top: 100px;
+	overflow: hidden;
+	height: 22px;
+	width: 200px;
+}
+hr{
+	position: relative;
+	top: 130px;
+}
+.Menu-footer {
+    display: none;
+    position: absolute;
+	height: 22px;
+	width: 200px;
+    bottom: 57px;
+    left: 60px;
+    cursor: pointer;
+    z-index: 3;
+	overflow: hidden;
+}	
+.socialmenu2{
+	position: relative;
+	left: 30%;
+}
+.Menu-footer a>span{
+    font: 400 14px/1 century gothic !important;
+    color: #4a4a4a !important;
+}
+#outer,#content{
+	height: 100vh;
+	text-align: justify;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#outer{
+	width: 650px;
+	position: absolute;
+	left: 40%;
+	overflow: hidden;
+	top: 0;
+	bottom: 0;
+	visibility: hidden;
+}
+#inner{
+	position: absolute;
+	left: 0;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+#inner::-webkit-scrollbar{
+	display: none;
+}
+#inner h1{
+	margin: 20px 0;
+	color: rgba(255,255,255,0.25);
+	transform: translateX(10px);
+	transition: transform 0.5s;
+	font-size: 167px;
+	text-align:right;
+	cursor:pointer;
+}
+
+#inner h1:hover{
+	color: white;
+    transform: translateX(-31px);
+    transition: 0.5s;
+}
+
